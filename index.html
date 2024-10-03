@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Kanna</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            margin: 20px;
+        }
+
+        .yes-button, .no-button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .no-button {
+            position: relative;
+        }
+
+        .thank-you {
+            font-size: 40px;
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">Will you forgive me, kanna?</div>
+        <div class="buttons">
+            <button class="yes-button" onclick="showThankYou()">Yes</button>
+            <button class="no-button" onmouseover="moveButton()">No</button>
+        </div>
+        <div class="thank-you">THANK YOU ❤️</div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noButton = document.querySelector('.no-button');
+            const randomX = Math.floor(Math.random() * 300) - 150;
+            const randomY = Math.floor(Math.random() * 300) - 150;
+            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        function showThankYou() {
+            document.querySelector('.thank-you').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
